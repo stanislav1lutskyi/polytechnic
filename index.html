@@ -2,62 +2,81 @@
 <html lang="uk">
 <head>
     <meta charset="UTF-8">
-    <title>Резюме - lab_2</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Резюме - Станіслав Луцький</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <table border="1" cellpadding="10" cellspacing="0" width="800">
-        <tr>
-            <th colspan="2">
-                <h1>Станіслав Михайлович Луцький</h1>
-            </th>
-        </tr>
-        <tr>
-            <td width="30%"><strong>Дата народження:</strong></td>
-            <td>26 жовтня 2005 р.</td>
-        </tr>
-        <tr>
-            <td><strong>Місце проживання:</strong></td>
-            <td>м. Івано-Франківськ</td>
-        </tr>
-        
-        <tr>
-            <th colspan="2">
-                <h2>Освіта</h2>
-            </th>
-        </tr>
-        <tr>
-            <td colspan="2">
-                Студент технічної спеціальності.
-            </td>
-        </tr>
+    <div class="resume-container">
+        <header class="resume-header">
+            <div class="header-content">
+                <h1 class="resume-name">Станіслав Луцький</h1>
+                <h2 class="resume-title">Розробник</h2>
+            </div>
+        </header>
 
-        <tr>
-            <th colspan="2">
-                <h2>Технічні навички</h2>
-            </th>
-        </tr>
-        <tr>
-            <td><strong>Мови програмування:</strong></td>
-            <td>HTML, CSS, Javascript</td>
-        </tr>
-        <tr>
-            <td><strong>Бази даних:</strong></td>
-            <td>MySQL</td>
-        </tr>
+        <div class="resume-body">
+            
+            <main class="left-column">
+                <section class="resume-section">
+                    <h2 class="section-heading">Мета</h2>
+                    <p class="section-text">Прагну розвиватися у сфері кібербезпеки та захисту інформації, поєднуючи знання з інженерії програмного забезпечення для створення захищених та ефективних систем. Маю досвід розробки веб-додатків та обслуговування комп'ютерного обладнання.</p>
+                </section>
 
-        <tr>
-            <th colspan="2">
-                <h2>Досвід та проєкти</h2>
-            </th>
-        </tr>
-        <tr>
-            <td><strong>Веб-система бронювання квитків на потяг:</strong></td>
-            <td>Проєкт на базі PHP та MySQL. Реалізовано логіку сортування та функціонал скасування замовлених квитків.</td>
-        </tr>
-        <tr>
-            <td><strong>Система управління інвентарем:</strong></td>
-            <td>Розробка структури таблиць для обліку та управління шкільним господарським інвентарем (пальне, інструменти, канцелярія).</td>
-        </tr>
-    </table>
+                <section class="resume-section">
+                    <h2 class="section-heading">Досвід та проєкти</h2>
+
+                    <div class="experience-entry">
+                        <h3 class="job-title">Система управління інвентарем</h3>
+                        <p class="job-meta">Проєктування баз даних</p>
+                        <p class="job-description">Спроектував структуру БД для обліку господарського інвентарю. Організував облік пального, інструментів та канцелярії.</p>
+                    </div>
+                </section>
+            </main>
+
+            <aside class="right-column">
+                <section class="resume-section">
+                    <h2 class="section-heading">Контакти</h2>
+                    <ul class="contact-list">
+                        <li><i class="icon-email"></i><a href="mailto:stas.business77@gmail.com">stas.business77@gmail.com</a></li>
+                        <li><i class="icon-phone"></i><a href="tel:+380664008958">+38(066)400-89-58</a></li>
+                        <li><i class="icon-website"></i><a href="https://stanislav1lutskyi.github.io/" target="_blank">stanislav1lutskyi.github.io</a></li>
+                        <li><i class="icon-location"></i><span>Івано-Франківськ</span></li>
+                    </ul>
+                </section>
+
+                <section class="resume-section">
+                    <h2 class="section-heading">Про мене</h2>
+                    <p class="section-text-small">Зараз я студент Львівської політехніки на спеціальності Кібербезпека та захист інформації. Відповідально ставлюся до навчання та технічних завдань.</p>
+                </section>
+
+                <section class="resume-section">
+                    <h2 class="section-heading">Освіта</h2>
+                    <div class="education-entry">
+                        <h3 class="school-name">ВСП "Фаховий коледж електронних приладів ІФНТУНГ", 2021р-2025р</h3>
+                        <p class="degree-text">Інженерія програмного забезпечення</p>
+                        <p class="section-text-small" style="margin-top: 5px;">Закінчив Івано-франківський технічний коледж електронних приладів.</p>
+                    </div>
+                    <div class="education-entry" style="margin-top: 15px;">
+                        <h3 class="school-name">НУ "ЛЬВІВСЬКА ПОЛІТЕХНІКА"</h3>
+                        <p class="degree-text">Кібербезпека та захист інформації</p>
+                    </div>
+                </section>
+
+                <section class="resume-section">
+                    <h2 class="section-heading">Навички</h2>
+                    <ul class="skills-list">
+                        <li>PHP, C++, Assembly</li>
+                        <li>MySQL та проєктування БД</li>
+                        <li>Захист інформації</li>
+                        <li>Обслуговування апаратного забезпечення</li>
+                    </ul>
+                </section>
+            </aside>
+        </div>
+    </div>
 </body>
 </html>

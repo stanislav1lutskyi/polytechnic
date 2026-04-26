@@ -6,20 +6,21 @@
     <title>Резюме - Станіслав Луцький</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <button id="theme-toggle" class="theme-btn">🌙 Змінити тему</button>
+
     <div class="resume-container">
         <header class="resume-header">
             <div class="header-content">
                 <h1 class="resume-name">Станіслав Луцький</h1>
-                <h2 class="resume-title">Розробник</h2>
+                <h2 class="resume-title">Розробник / Фахівець із кібербезпеки</h2>
             </div>
         </header>
 
         <div class="resume-body">
-            
             <main class="left-column">
                 <section class="resume-section">
                     <h2 class="section-heading">Мета</h2>
@@ -28,11 +29,17 @@
 
                 <section class="resume-section">
                     <h2 class="section-heading">Досвід та проєкти</h2>
-
                     <div class="experience-entry">
                         <h3 class="job-title">Система управління інвентарем</h3>
                         <p class="job-meta">Проєктування баз даних</p>
                         <p class="job-description">Спроектував структуру БД для обліку господарського інвентарю. Організував облік пального, інструментів та канцелярії.</p>
+                    </div>
+                </section>
+
+                <section class="resume-section">
+                    <h2 class="section-heading">Відгуки роботодавців</h2>
+                    <div id="comments-container">
+                        <p class="loading-text">Завантаження коментарів...</p>
                     </div>
                 </section>
             </main>
@@ -41,10 +48,10 @@
                 <section class="resume-section">
                     <h2 class="section-heading">Контакти</h2>
                     <ul class="contact-list">
-                        <li><i class="icon-email"></i><a href="mailto:stas.business77@gmail.com">stas.business77@gmail.com</a></li>
-                        <li><i class="icon-phone"></i><a href="tel:+380664008958">+38(066)400-89-58</a></li>
-                        <li><i class="icon-website"></i><a href="https://stanislav1lutskyi.github.io/" target="_blank">stanislav1lutskyi.github.io</a></li>
-                        <li><i class="icon-location"></i><span>Івано-Франківськ</span></li>
+                        <li><span class="icon">@</span><a href="mailto:stas.business77@gmail.com">stas.business77@gmail.com</a></li>
+                        <li><span class="icon">📞</span><a href="tel:+380664008958">+38(066)400-89-58</a></li>
+                        <li><span class="icon">🔗</span><a href="https://stanislav1lutskyi.github.io/" target="_blank">Моє портфоліо</a></li>
+                        <li><span class="icon">📍</span><span>Івано-Франківськ</span></li>
                     </ul>
                 </section>
 
@@ -56,9 +63,8 @@
                 <section class="resume-section">
                     <h2 class="section-heading">Освіта</h2>
                     <div class="education-entry">
-                        <h3 class="school-name">ВСП "Фаховий коледж електронних приладів ІФНТУНГ", 2021р-2025р</h3>
+                        <h3 class="school-name">ІФТКЕП ІФНТУНГ (2021-2025)</h3>
                         <p class="degree-text">Інженерія програмного забезпечення</p>
-                        <p class="section-text-small" style="margin-top: 5px;">Закінчив Івано-франківський технічний коледж електронних приладів.</p>
                     </div>
                     <div class="education-entry" style="margin-top: 15px;">
                         <h3 class="school-name">НУ "ЛЬВІВСЬКА ПОЛІТЕХНІКА"</h3>
@@ -78,5 +84,25 @@
             </aside>
         </div>
     </div>
+
+    <footer id="info-footer"></footer>
+
+    <div id="feedback-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <h2>Зворотний зв'язок</h2>
+            <p>Залиште свої контакти, і я з вами зв'яжусь.</p>
+            
+            <form action="https://formspree.io/f/xdayvobv" method="POST">
+                <input type="text" name="name" placeholder="Ім'я" required>
+                <input type="email" name="email" placeholder="Ваш Email" required>
+                <input type="tel" name="phone" placeholder="Номер телефону" required>
+                <textarea name="message" placeholder="Ваше повідомлення..." required></textarea>
+                <button type="submit" class="submit-btn">Відправити</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

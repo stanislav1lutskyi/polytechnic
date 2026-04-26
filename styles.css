@@ -1,212 +1,186 @@
 :root {
-    --text-color: #333;
-    --heading-color: #000;
-    --section-heading-color: #0056D6;
-    --link-color: #0056D6;
-    --sidebar-bg-color: #EBF4FF;
-    --font-family: 'Montserrat Condensed', Arial, sans-serif;
-    --body-font-family: Arial, sans-serif;
+    --bg-page: #f3f4f6;
+    --bg-resume: #ffffff;
+    --bg-sidebar: #f8fafc;
+    --text-main: #374151;
+    --text-muted: #6b7280;
+    --primary-color: #2563eb;
+    --primary-hover: #1d4ed8;
+    --heading-color: #111827;
+    --line-color: #e5e7eb;
+    --font-main: 'Montserrat', sans-serif;
 }
 
+body.dark-theme {
+    --bg-page: #111827;
+    --bg-resume: #1f2937;
+    --bg-sidebar: #111827;
+    --text-main: #d1d5db;
+    --text-muted: #9ca3af;
+    --primary-color: #60a5fa;
+    --primary-hover: #93c5fd;
+    --heading-color: #f3f4f6;
+    --line-color: #374151;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
 body {
-    font-family: var(--font-family);
-    color: var(--text-color);
-    margin: 0;
-    background-color: #f4f4f4;
+    background-color: var(--bg-page);
+    color: var(--text-main);
+    font-family: var(--font-main);
     display: flex;
-    justify-content: center;
-    padding: 20px;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 20px;
+    transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .resume-container {
-    width: 210mm;
-    height: 297mm;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    display: flex;
-    flex-direction: column;
+    width: 100%;
+    max-width: 900px;
+    background-color: var(--bg-resume);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
+body.dark-theme .resume-container { box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.5); }
 
 .resume-header {
-    background-color: #fff;
-    padding: 40px 60px;
+    background: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+    padding: 50px 60px;
+    color: white;
 }
+.resume-name { font-size: 42px; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.5px; color: white; }
+.resume-title { font-size: 18px; font-weight: 400; opacity: 0.9; letter-spacing: 1px; color: white; }
 
-.resume-name {
-    font-size: 48px;
-    font-weight: 700;
-    margin: 0;
-    color: var(--heading-color);
-    line-height: 1.1;
-}
+.resume-body { display: grid; grid-template-columns: 2fr 1fr; }
 
-.resume-title {
-    font-size: 20px;
-    font-weight: 400;
-    margin: 5px 0 0;
-    color: var(--heading-color);
-    letter-spacing: 1px;
-}
-
-.resume-body {
-    flex-grow: 1;
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-}
-
-.resume-section {
-    margin-bottom: 25px;
-}
-
-.section-heading {
-    color: var(--section-heading-color);
-    font-size: 18px;
-    font-weight: 600;
-    margin: 0 0 10px;
-    display: flex;
-    align-items: center;
-    position: relative;
-    padding-bottom: 5px;
-}
-
-.section-heading::after {
-    content: '';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 1px;
-    background-color: var(--section-heading-color);
-}
-
-.section-text {
-    font-size: 14px;
-    line-height: 1.5;
-    margin: 0;
-    font-family: var(--body-font-family);
-    color: #444;
-}
-
-.left-column {
-    padding: 20px 40px 40px 60px;
-}
-
-.experience-entry {
-    margin-bottom: 15px;
-}
-
-.job-title {
-    font-size: 16px;
-    font-weight: 600;
-    color: var(--heading-color);
-    margin: 0;
-}
-
-.job-meta {
-    font-size: 12px;
-    color: #666;
-    margin: 2px 0 5px;
-}
-
-.job-description {
-    font-size: 14px;
-    line-height: 1.4;
-    margin: 0;
-    font-family: var(--body-font-family);
-    color: #444;
-}
+.left-column { padding: 40px 50px; }
 
 .right-column {
-    background-color: var(--sidebar-bg-color);
-    padding: 20px 40px;
+    background-color: var(--bg-sidebar);
+    padding: 40px 40px;
+    border-left: 1px solid var(--line-color);
 }
 
-.contact-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+.resume-section { margin-bottom: 35px; }
+.section-heading {
+    color: var(--primary-color);
+    font-size: 18px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--line-color);
 }
+.section-text, .section-text-small { font-size: 14px; line-height: 1.6; color: var(--text-main); }
+.section-text-small { font-size: 13px; }
 
-.contact-list li {
-    display: flex;
-    align-items: center;
-    margin-bottom: 8px;
-    font-size: 13px;
-    color: var(--link-color);
-}
+.experience-entry { margin-bottom: 20px; }
+.job-title { font-size: 16px; font-weight: 700; color: var(--heading-color); margin-bottom: 4px; }
+.job-meta { font-size: 12px; color: var(--primary-color); margin-bottom: 8px; font-weight: 600; }
+.job-description { font-size: 14px; line-height: 1.5; color: var(--text-main); }
 
-.contact-list a {
-    color: var(--link-color);
-    text-decoration: none;
-}
-
-.contact-list a:hover {
-    text-decoration: underline;
-}
-
-.section-text-small {
-    font-size: 13px;
-    line-height: 1.4;
-    margin: 0;
-    font-family: var(--body-font-family);
-    color: #444;
-}
-
-.education-entry {
-    margin-bottom: 10px;
-}
-
-.school-name {
-    font-size: 14px;
-    font-weight: 600;
-    color: var(--heading-color);
-    margin: 0;
-}
-
-.degree-text {
-    font-size: 13px;
-    margin: 2px 0 0;
-    font-family: var(--body-font-family);
-    color: #444;
-}
-
-.skills-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
+.school-name { font-size: 14px; font-weight: 700; color: var(--heading-color); margin-bottom: 4px; }
+.degree-text { font-size: 13px; color: var(--text-muted); }
+.skills-list { list-style: none; }
 .skills-list li {
     font-size: 13px;
-    margin-bottom: 5px;
-    font-family: var(--body-font-family);
-    color: #444;
-}
-
-.icon-email, .icon-phone, .icon-website, .icon-location {
-    width: 16px;
-    height: 16px;
-    background-color: var(--link-color);
-    border-radius: 50%;
-    margin-right: 10px;
-    display: inline-block;
+    margin-bottom: 8px;
     position: relative;
+    padding-left: 15px;
+}
+.skills-list li::before {
+    content: "▹"; position: absolute; left: 0; color: var(--primary-color); font-weight: bold;
 }
 
-.icon-email::after { content: '@'; font-size: 10px; color: #fff; position: absolute; left: 3px; top: 1px; }
-.icon-phone::after { content: '\260E'; font-size: 12px; color: #fff; position: absolute; left: 2px; top: 0; }
-.icon-website::after { content: '\2318'; font-size: 12px; color: #fff; position: absolute; left: 2px; top: 0; }
-.icon-location::after { content: '\27A2'; font-size: 12px; color: #fff; position: absolute; left: 2px; top: 0; }
+.contact-list { list-style: none; }
+.contact-list li { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; font-size: 13px; }
+.icon { background-color: var(--primary-color); color: white; width: 24px; height: 24px; display: flex; justify-content: center; align-items: center; border-radius: 50%; font-size: 12px; }
+.contact-list a { color: var(--text-main); text-decoration: none; transition: color 0.2s; }
+.contact-list a:hover { color: var(--primary-color); text-decoration: underline; }
 
-.right-column ul li {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    margin-bottom: 12px;
-    word-break: break-all;
+.comment-box {
+    background-color: var(--bg-sidebar);
+    border-left: 3px solid var(--primary-color);
+    padding: 15px;
+    margin-bottom: 15px;
+    border-radius: 0 8px 8px 0;
+    transition: transform 0.2s ease;
+}
+.comment-box:hover { transform: translateX(5px); }
+.comment-box h4 { font-size: 13px; color: var(--heading-color); margin-bottom: 5px; }
+.comment-box p { font-size: 12px; color: var(--text-muted); line-height: 1.5; }
+
+.theme-btn {
+    position: fixed; top: 20px; right: 20px;
+    padding: 10px 20px;
+    background-color: var(--bg-resume);
+    color: var(--heading-color);
+    border: 1px solid var(--line-color);
+    border-radius: 30px;
+    cursor: pointer; font-weight: 600;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+    transition: all 0.3s ease; z-index: 1000;
+}
+.theme-btn:hover { transform: translateY(-2px); box-shadow: 0 10px 15px rgba(0,0,0,0.1); }
+body.dark-theme .theme-btn { border-color: #4b5563; }
+
+#info-footer {
+    text-align: center; padding: 20px; margin-top: 30px;
+    font-size: 12px; color: var(--text-muted);
+    background-color: var(--bg-resume);
+    width: 100%; max-width: 900px;
+    border-radius: 12px; box-shadow: 0 4px 6px rgba(0,0,0,0.05);
 }
 
-.right-column ul li a {
-    display: inline-block;
-    white-space: nowrap;
+.modal {
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); backdrop-filter: blur(5px);
+    z-index: 2000; justify-content: center; align-items: center;
+    animation: fadeIn 0.3s ease;
+}
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+
+.modal-content {
+    background-color: var(--bg-resume);
+    padding: 40px; border-radius: 16px; width: 400px; max-width: 90%;
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    position: relative; animation: slideUp 0.4s ease;
+}
+@keyframes slideUp { from { transform: translateY(20px); opacity: 0; } to { transform: translateY(0); opacity: 1; } }
+
+.modal-content h2 { color: var(--heading-color); margin-bottom: 10px; }
+.modal-content p { color: var(--text-muted); margin-bottom: 20px; font-size: 14px; }
+.modal-content form { display: flex; flex-direction: column; gap: 15px; }
+
+.modal-content input, .modal-content textarea {
+    width: 100%; padding: 12px;
+    border: 1px solid var(--line-color); border-radius: 8px;
+    background-color: var(--bg-page); color: var(--text-main);
+    font-family: inherit; font-size: 14px; transition: all 0.3s;
+}
+.modal-content input:focus, .modal-content textarea:focus {
+    outline: none; border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2); background-color: var(--bg-resume);
+}
+.submit-btn {
+    padding: 12px; background-color: var(--primary-color); color: white;
+    border: none; border-radius: 8px; font-weight: 600; cursor: pointer; transition: 0.3s;
+}
+.submit-btn:hover { background-color: var(--primary-hover); transform: translateY(-1px); }
+
+.close-btn {
+    position: absolute; top: 15px; right: 20px;
+    font-size: 24px; color: var(--text-muted); cursor: pointer; transition: 0.2s;
+}
+.close-btn:hover { color: var(--heading-color); }
+
+@media (max-width: 768px) {
+    .resume-body { grid-template-columns: 1fr; }
+    .right-column { border-left: none; border-top: 1px solid var(--line-color); }
+    .resume-header { padding: 40px 30px; text-align: center; }
 }

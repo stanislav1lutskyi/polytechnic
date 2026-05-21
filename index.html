@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <button id="theme-toggle" class="theme-btn">🌙 Змінити тему</button>
+    <button id="theme-toggle" class="theme-btn">🌙 Нічна тема</button>
 
     <div class="resume-container">
         <header class="resume-header">
@@ -24,20 +24,11 @@
             <main class="left-column">
                 <section class="resume-section">
                     <h2 class="section-heading">Мета</h2>
-                    <p class="section-text">Прагну розвиватися у сфері кібербезпеки та захисту інформації, поєднуючи знання з інженерії програмного забезпечення для створення захищених та ефективних систем. Маю досвід розробки веб-додатків та обслуговування комп'ютерного обладнання.</p>
+                    <p class="section-text">Прагну розвиватися у сфері кібербезпеки та захисту інформації, поєднуючи знання з інженерії програмного забезпечення для створення захищених та ефективних систем.</p>
                 </section>
 
                 <section class="resume-section">
-                    <h2 class="section-heading">Досвід та проєкти</h2>
-                    <div class="experience-entry">
-                        <h3 class="job-title">Система управління інвентарем</h3>
-                        <p class="job-meta">Проєктування баз даних</p>
-                        <p class="job-description">Спроектував структуру БД для обліку господарського інвентарю. Організував облік пального, інструментів та канцелярії.</p>
-                    </div>
-                </section>
-
-                <section class="resume-section">
-                    <h2 class="section-heading">Відгуки роботодавців</h2>
+                    <h2 class="section-heading">Відгуки</h2>
                     <div id="comments-container">
                         <p class="loading-text">Завантаження коментарів...</p>
                     </div>
@@ -85,15 +76,14 @@
         </div>
     </div>
 
-    <footer id="info-footer"></footer>
+    <footer id="info-footer" style="text-align: center; padding: 20px; font-size: 12px;"></footer>
 
-    <div id="feedback-modal" class="modal">
+    <div id="feedback-modal" class="modal" style="display: none;">
         <div class="modal-content">
             <span class="close-btn" id="close-modal">&times;</span>
             <h2>Зворотний зв'язок</h2>
             <p>Залиште свої контакти, і я з вами зв'яжусь.</p>
-            
-            <form action="https://formspree.io/f/xdayvobv" method="POST">
+            <form id="contact-form">
                 <input type="text" name="name" placeholder="Ім'я" required>
                 <input type="email" name="email" placeholder="Ваш Email" required>
                 <input type="tel" name="phone" placeholder="Номер телефону" required>
